@@ -1,8 +1,8 @@
-import "./App.css";
 import { useEffect } from "react";
 import axios from "axios";
 import { TWITCH_CLIENT_ID, TWITCH_SECRET } from "./config/api";
 import { Main } from "./layout/Main";
+import "./App.scss";
 
 function App() {
   async function init() {
