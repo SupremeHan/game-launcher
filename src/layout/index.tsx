@@ -1,11 +1,10 @@
 import { auth } from "../../firebase";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
 
 export function Layout() {
   const user = useContext(AuthContext);
-
   const signOut = async () => {
     await auth.signOut();
   };
@@ -15,11 +14,19 @@ export function Layout() {
   }
 
   return (
-    <div>
-      <h1>gas gas</h1>
-      <button type="button" onClick={signOut}>
-        Sign Out
-      </button>
+    <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <NavLink to={"/dashboard"}>Dashboard</NavLink>
+        <NavLink to={"/shop"}>Shop</NavLink>
+        <NavLink to={"/library"}>Library</NavLink>
+
+        <button type="button" onClick={signOut}>
+          Sign Out
+        </button>
+      </div>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
