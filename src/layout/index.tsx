@@ -16,16 +16,18 @@ export function Layout() {
 
   return (
     <div className="Layout">
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <NavLink to={"/dashboard"}>Dashboard</NavLink>
-        <NavLink to={"/shop"}>Shop</NavLink>
-        <NavLink to={"/library"}>Library</NavLink>
+      <div className="Sidebar">
+        <div className="Sidebar__nav">
+          <NavLink to={"/dashboard"}>Dashboard</NavLink>
+          <NavLink to={"/shop"}>Shop</NavLink>
+          <NavLink to={"/library"}>Library</NavLink>
+        </div>
 
         <button type="button" onClick={signOut}>
           Sign Out
         </button>
       </div>
-      <main>
+      <main className="Main">
         <Outlet />
       </main>
     </div>

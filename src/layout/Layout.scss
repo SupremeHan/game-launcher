@@ -4,3 +4,32 @@
   height: 100vh;
   line-height: unset;
 }
+
+.Main {
+  padding: 20px;
+}
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 20px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  button {
+    margin-bottom: 40px;
+  }
+}
