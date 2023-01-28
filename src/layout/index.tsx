@@ -3,6 +3,7 @@ import { Navigate, NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 import "./Layout.scss";
+import { Button } from "@chakra-ui/react";
 
 export function Layout() {
   const user = useContext(AuthContext);
@@ -23,9 +24,9 @@ export function Layout() {
           <NavLink to={"/library"}>Library</NavLink>
         </div>
 
-        <button type="button" onClick={signOut}>
+        <Button colorScheme={"red"} size="sm" type="button" onClick={signOut}>
           Sign Out
-        </button>
+        </Button>
       </div>
       <main className="Main">
         <Outlet />
